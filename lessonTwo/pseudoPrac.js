@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* Writing formal pseudocode
 
 SEQUENCE =>
@@ -84,6 +85,7 @@ END
 
 */
 
+// eslint-disable-next-line no-unused-vars
 function sum (num1, num2) {
   return num1 + num2;
 }
@@ -108,6 +110,7 @@ END
 
 */
 
+// eslint-disable-next-line no-unused-vars
 const array = ['this', 'can', 'be', 'fun'];
 
 function concat(arr) {
@@ -134,9 +137,11 @@ PRINT new array
 END */
 
 
+// eslint-disable-next-line no-unused-vars
 let array1 = [1,2,3,4,5,6]
 let newArray = [];
 
+// eslint-disable-next-line no-unused-vars
 function skip(arr) {
   for (let i = 0; i < arr.length; i += 2) {
     newArray.push(arr[i]);
@@ -145,6 +150,7 @@ function skip(arr) {
 
 // or 
 
+// eslint-disable-next-line no-unused-vars
 let array2 = [1,2,3,4,5,6]
 let newArray1 = [];
 
