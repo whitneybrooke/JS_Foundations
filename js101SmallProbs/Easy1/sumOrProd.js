@@ -1,3 +1,4 @@
+/* eslint-disable id-length */
 // Write a program that asks the user to enter an integer
 // greater than 0, then asks whether the user wants to
 // determine the sum or the product of all numbers between
@@ -46,3 +47,12 @@ if (operation === 's') {
   console.log(`The product of the integers between 1 and ${integer} is ${product(Number(integer))}`);
 }
 
+/*
+function sumLoop (num) {
+  let sumTotals = 0;
+  for (let i = 0; i <= num; i++) {
+    sumTotals += i;
+  }
+  return sumTotals;
+}
+*/
