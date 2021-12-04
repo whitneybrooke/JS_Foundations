@@ -60,22 +60,3 @@ while (true) {
   }
   if (answer[0] === 'n') break;
 }
-
-
-//   let annualInterest = interestRate / 100;
-//   let monthlyInterest = annualInterest / 12;
-//   let durationInMonths = durationOfLoan * 12;
-
-//   let monthlyPayment = loanAmount * (monthlyInterest /
-//     (1 - Math.pow((1 + monthlyInterest), (-durationInMonths))));
-
-//   prompt(`Your monthly payment is: $${monthlyPayment.toFixed(2)}`);
-
-//   prompt('Would you like to perform another operation? (y/n)');
-//   let answer = readline.question();
-
-//   if (answer[0].toLowerCase() !== 'y') {
-//     break;
-//   }
-// }
-
