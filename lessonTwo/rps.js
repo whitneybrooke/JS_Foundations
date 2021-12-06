@@ -73,6 +73,8 @@ while (true) {
     }
     if (answer[0] === 'y') {
       console.clear();
+      totalCompChoice = 0;
+      totalHumanChoice = 0;
     } else if (answer[0] !== 'y') break;
   }
 
@@ -91,3 +93,4 @@ while (true) {
     } else if (answer[0] !== 'y') break;
   }
 }
+
