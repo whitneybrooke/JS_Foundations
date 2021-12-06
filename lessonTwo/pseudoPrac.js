@@ -9,9 +9,9 @@ Initialize: SET
 Add: INCREMENT
 Sub: DECREMENT
 
-READ:	retrieve a value from a variable
+READ:retrieve a value from a variable
 
-WHILE => 
+WHILE =>
 WHILE condition sequence, ENDWHILE
 
 REPEAT UNTIL =>
@@ -67,14 +67,14 @@ END
 // -----------------------------------------------------------
 
 
-/* 
+/*
 
 START
 
 # a function that returns the sum of two numbers
 
 SET a function nameFunction
-SET two parameters for the function 
+SET two parameters for the function
 CALCULATE the sum of the passed parameters
 PRINT the sum
 
@@ -92,17 +92,17 @@ function sum (num1, num2) {
 
 // ---------------------------------------------------
 
-// a function that takes an array of strings, and returns a string that 
+// a function that takes an array of strings, and returns a string that
 // is all those strings concatenated together
 
 /*
 
-START 
+START
 
 SET function with one array parameter
 SET string variable to pass new string in which to pass new string
 FOR each element in array, concatenate and save to new variable
-ENDFOR 
+ENDFOR
 
 PRINT string
 
@@ -115,11 +115,11 @@ const array = ['this', 'can', 'be', 'fun'];
 
 function concat(arr) {
   let concatString = arr.join(' ');
-  return concatString
+  return concatString;
 }
 
 
-// a function that takes an array of integers, and returns a 
+// a function that takes an array of integers, and returns a
 // new array with every other element
 
 /* START
@@ -127,8 +127,8 @@ function concat(arr) {
 # function that takes an array of integers
 
 function (arr)
-iterate over each element and only print every other element 
-somehow skip every other element 
+iterate over each element and only print every other element
+somehow skip every other element
 store to new array
 
 
@@ -138,37 +138,36 @@ END */
 
 
 // eslint-disable-next-line no-unused-vars
-let array1 = [1,2,3,4,5,6]
+let array1 = [1,2,3,4,5,6];
 let newArray = [];
 
 // eslint-disable-next-line no-unused-vars
 function skip(arr) {
-  for (let i = 0; i < arr.length; i += 2) {
-    newArray.push(arr[i]);
-  } return newArray;
+  for (let index = 0; index < arr.length; index += 2) {
+    newArray.push(arr[index]);
+  }
+  return newArray;
 }
 
-// or 
+// or
 
 // eslint-disable-next-line no-unused-vars
-let array2 = [1,2,3,4,5,6]
+let array2 = [1,2,3,4,5,6];
 let newArray1 = [];
 
 function skip2 (arr) {
-  for (let i in arr) { // the for/in loop returns an index
-    if (i % 2 === 0) { // this helps log all even index [elements]
-      newArray.push(arr[i]);
+  for (let index in arr) { // the for/in loop returns an index
+    if (index % 2 === 0) { // this helps log all even index [elements]
+      newArray.push(arr[index]);
     }
-  } return newArray; 
+  }
+  return newArray;
 }
 
-/* 
-START
+function cap(name) {
+  return name.toUpperCase();
+}
 
-
-
-END
-
-
-
-*/
+let myName = "naveed";
+cap(myName);
+console.log(myName); // => 'naveed'
