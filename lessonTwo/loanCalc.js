@@ -39,7 +39,7 @@ while (true) {
   if (interestRate === '0') {
     let numOfMonths = durationOfLoan * 12;
     let totalAmount = loanAmount / numOfMonths;
-    prompt(`Your monthly payment is ${totalAmount}.`);
+    prompt(`Your monthly payment is $${totalAmount.toFixed(2)} for ${numOfMonths} months.`);
   } else {
     let annualInterest = interestRate / 100;
     let monthlyInterest = annualInterest / 12;
@@ -48,15 +48,20 @@ while (true) {
     let monthlyPayment = loanAmount * (monthlyInterest /
     (1 - Math.pow((1 + monthlyInterest), (-durationInMonths))));
 
-    prompt(`Your monthly payment is: $${monthlyPayment.toFixed(2)}`);
+    prompt(`Your monthly payment is: $${monthlyPayment.toFixed(2)} for ${durationInMonths} months.`);
   }
 
   prompt('Would you like to perform another operation? (y/n)');
   let answer = readline.question();
 
-  while (answer[0].toLowerCase() !== 'y' && answer[0].toLowerCase() !== 'n' ) {
-    prompt('Please enter y or n)');
+  while (answer.toLowerCase() !== 'y' && answer.toLowerCase() !== 'n' ) {
+    prompt('Please enter y or n, only.');
     answer = readline.question();
   }
-  if (answer[0] === 'n') break;
+
+  if (answer.toLowerCase() === 'y') {
+    console.clear();
+  } else if (answer.toLowerCase() === 'n') {
+    break;
+  }
 }
