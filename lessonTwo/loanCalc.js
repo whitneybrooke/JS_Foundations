@@ -8,6 +8,8 @@ function invalidNumber(number) {
   return number.trimStart() === '' || Number.isNaN(Number(number));
 }
 
+const TWELVE = 12;
+
 prompt('Welcome to the Loan Calculator!');
 
 while (true) {
@@ -37,13 +39,13 @@ while (true) {
   }
 
   if (interestRate === '0') {
-    let numOfMonths = durationOfLoan * 12;
+    let numOfMonths = durationOfLoan * TWELVE;
     let totalAmount = loanAmount / numOfMonths;
     prompt(`Your monthly payment is $${totalAmount.toFixed(2)} for ${numOfMonths} months.`);
   } else {
     let annualInterest = interestRate / 100;
-    let monthlyInterest = annualInterest / 12;
-    let durationInMonths = durationOfLoan * 12;
+    let monthlyInterest = annualInterest / TWELVE;
+    let durationInMonths = durationOfLoan * TWELVE;
 
     let monthlyPayment = loanAmount * (monthlyInterest /
     (1 - Math.pow((1 + monthlyInterest), (-durationInMonths))));

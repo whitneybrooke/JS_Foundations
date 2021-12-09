@@ -28,6 +28,15 @@ console.log(stringToInteger("4321") === 4321); // logs true
 console.log(stringToInteger("570") === 570); // logs true
 */
 
+// my answer
+// function stringToInteger (string) {
+//   return +string;
+// }
+
+// console.log(stringToInteger("4321") === 4321);
+// console.log(stringToInteger("570") === 570);
+
+// school answer
 function stringToInteger(string) {
   const DIGITS = {
     0: 0,

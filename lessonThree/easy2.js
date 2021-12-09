@@ -20,11 +20,11 @@ the original array. Use reverse for the first solution, and sort for the second.
 
 let numbers = [1, 2, 3, 4, 5];
 
-let newArray = numbers.slice().reverse();
+let newArray = numbers.slice().reverse(); // slice returns a new array
 console.log(newArray);
 
 let sortedArray = [...numbers].sort(function(a,b) {
-  return b - a;
+  return b - a; // ascending would be a - b
 });
 console.log(sortedArray);
 
@@ -32,8 +32,10 @@ console.log(sortedArray);
 let reversedArray = [];
 
 numbers.forEach((number) => {
-  console.log(reversedArray.unshift(number));
-});
+  console.log(reversedArray.unshift(number)); //unshift adds to start of array
+}); // takes each number starting with the first from numbers array
+// and adds it to the reversed array at the beginning. so starts with
+// 1, then adds 2 at the beginning, then 3 at the beg and so on
 
 /*
 Question 3
@@ -60,6 +62,7 @@ let famousWords = "seven years ago...";
 let fourScore = 'Four score and';
 console.log(fourScore + ' ' + famousWords);
 console.log(fourScore.concat(' ', famousWords));
+console.log('Four score and ' + famousWords);
 
 /*
 Question 5
@@ -68,7 +71,7 @@ removing the number at index 2, so that the array becomes [1, 2, 4, 5].
 */
 
 let nums = [1,2,3,4,5];
-nums.splice(2, 1);
+nums.splice(2, 1); // starts at the index number 2 then takes away 1
 console.log(nums);
 
 /*
@@ -90,7 +93,8 @@ values, but in an un-nested format:
 let flinstones = ["Fred", "Wilma", ["Barney", "Betty"], ["Bambam", "Pebbles"]];
 flinstones.flat();
 // or
-let newFlinstones = [].concat(...flinstones);
+let newFlinstones = [].concat(...flinstones); // starts with empty array
+// then ...spreads the names in one at a time
 
 /*
 Question 7
@@ -105,8 +109,18 @@ Barney's name and Barney's number:
 */
 
 let flintstones = { Fred: 0, Wilma: 1, Barney: 2, Betty: 3, Bambam: 4, Pebbles: 5 };
-let flintstonesArr = Object.entries(flintstones);
-let barneyArr = flintstonesArr[2];
+let flintstonesArr = Object.entries(flintstones); // creates an array with each value pair
+/*
+[
+  [ 'Fred', 0 ],
+  [ 'Wilma', 1 ],
+  [ 'Barney', 2 ],
+  [ 'Betty', 3 ],
+  [ 'Bambam', 4 ],
+  [ 'Pebbles', 5 ]
+]
+*/
+let barneyArr = flintstonesArr[2]; // access element at index 2
 
 /*
 Question 8
@@ -152,9 +166,10 @@ characters in each of the following strings:
 let statement1 = "The Flintstones Rock!";
 let statement2 = "Easy come, easy go.";
 
-statement1.split('').filter(function(element) {
-  return element === 't'.length;
-});
+statement1.split('').filter(function(element) { // function declaration
+  return element === 't'.length; // split '' returns an array
+}); // filter then goes through each letter to find t, adds the t's
+// together get the length of 't'
 
-statement1.split('').filter(element => element === 't'.length);
+statement1.split('').filter(element => element === 't'.length); // function expression
 statement2.split('').filter(element => element === 't'.length);
