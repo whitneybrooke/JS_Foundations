@@ -15,15 +15,17 @@ stringy(7);    // "1010101"
 */
 
 // takes a number
-// for every number prints alternating ones and zeros
-// somehow count that number and each time add a one or zero
+// starts with 1 and 0 is next
+// if num is even, prints 0
+// if num is odd, prints 1
+// save to string
 
-function stringy (num) {
+function stringy (number) {
   let string = '';
-  for (let i = 1; i <= num; i++ ) {
-    if (i % 2 !== 0) {
+  for (let num = 1; num <= number; num++) {
+    if (num % 2 === 1) {
       string += '1';
-    } else if (i % 2 === 0) {
+    } else {
       string += '0';
     }
   }

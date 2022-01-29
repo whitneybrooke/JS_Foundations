@@ -23,12 +23,11 @@ console.log(xor(true, true) === false);
 
 */
 
-function xor (arg1, arg2) {
-  if ((!arg1 && arg2) || (arg1 && !arg2)) {
+function xor (num, num2) {
+  if ((num && !num2) || (num2 && !num)) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 console.log(xor(5, 0) === true);
@@ -37,5 +36,9 @@ console.log(xor(1, 1) === false);
 console.log(xor(true, true) === false);
 console.log(xor(false, false) === false);
 
-// logic to return true if one is true and one is false
-// and return false if both are true or both are false
+// Suppose you were modeling a light at the top of a flight of
+// stairs wired in such a way that the light can be turned on
+// or off using either the switch at the bottom of the stairs
+// or the switch at the top of the stairs. This is an xor
+// configuration, and it can be modeled in JavaScript using
+// the xor function. Think of some additional examples.

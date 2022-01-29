@@ -9,14 +9,10 @@ Write a function that takes any year greater than 0 as input
 and returns true if the year is a leap year, or false if it is not a leap year.
 
 */
-function isLeapYear (num) {
-  if ((num % 4 === 0 && num % 100 !== 0) || num % 400 === 0) {
-    return true;
-  } else {
-    return false;
-  }
-}
 
+function isLeapYear (year) {
+  return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
+}
 
 isLeapYear(2016);      // true
 isLeapYear(2015);      // false

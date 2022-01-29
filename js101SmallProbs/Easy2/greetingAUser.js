@@ -16,16 +16,12 @@ HELLO BOB. WHY ARE WE SCREAMING?
 
 let readlineSync = require('readline-sync');
 
-function prompt (message) {
-  console.log(message);
-}
-
-prompt('Please enter you name.');
+console.log('What is your name?');
 let name = readlineSync.question();
 
 if (name.includes('!')) {
+  name = name.slice(0, -1);
   console.log(`HELLO ${name.toUpperCase()}. WHY ARE WE SCREAMING?`);
 } else {
-  console.log(`Hello ${name}.`);
+  console.log(`Hello, ${name}.`);
 }
-

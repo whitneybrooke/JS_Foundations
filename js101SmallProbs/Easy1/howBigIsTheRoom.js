@@ -9,7 +9,6 @@ Use the readlineSync.prompt method to collect user input.
 
 Example:
 
-Copy Code
 Enter the length of the room in meters:
 10
 Enter the width of the room in meters:
@@ -17,19 +16,25 @@ Enter the width of the room in meters:
 The area of the room is 70.00 square meters (753.47 square feet).
 */
 
-const readlineSync = require('readline-sync');
+// Ask the user for length in meters
+// Ask the user for width in meters
+// output the area of a room in square meters and square feet
 
-function prompt(message) {
-  console.log(`=> ${message}`);
+let readlineSync = require('readline-sync');
+
+function showMessage (message) {
+  console.log(message);
 }
 
-prompt('Enter the length of the room in meters');
-let length = readlineSync.question();
+showMessage('Enter the length of the room in meters');
+let length = readlineSync.prompt();
+length = parseInt(length, 10);
 
-prompt('Enter the width of the room in meters');
-let width = readlineSync.question();
+showMessage('Enter the width of the room in meters');
+let width = readlineSync.prompt();
+width = parseInt(width, 10);
 
 let squareMeters = length * width;
-let squareFeet = squareMeters * 10.7639;
+let squareFeet = (squareMeters * 10.7639).toFixed(2);
 
-console.log(`The area of the room is ${squareMeters.toFixed(2)} in square meters (${squareFeet.toFixed(2)}).`);
+showMessage(`The area of the room is ${squareMeters} (${squareFeet} square feet)`);

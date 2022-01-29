@@ -1,4 +1,3 @@
-/* eslint-disable id-length */
 /*
 
 Write a function that returns an Array that contains
@@ -18,11 +17,11 @@ console.log(oddities([])); // logs []
 
 */
 
-function oddities (arr) {
+function oddities (array) {
   let newArr = [];
-  for (let element of arr) {
-    if (arr.indexOf(element) % 2 !== 1) {
-      newArr.push(element);
+  for (let element in array) { // for in loop does indexes
+    if (element % 2 === 0) {   // for of loop does the actual elements
+      newArr.push(array[element]);
     }
   }
   return newArr;
@@ -34,11 +33,3 @@ console.log(oddities(["abc", "def"])); // logs ['abc']
 console.log(oddities([123])); // logs [123]
 console.log(oddities([])); // logs []
 
-// function oddities (arr) {
-//   let newArr = [];
-//   for (let i = 0; i < arr.length; i++) {
-//     if (i % 2 === 1) {
-//       newArr.push(i);
-//     }
-//   }
-// }

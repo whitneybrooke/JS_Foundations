@@ -26,19 +26,18 @@ twice(7676);        // 7676
 inputs: numbers
 outputs: numbers
 
-rules: if the number provided is a double number must return as is
+rules: if the number provided is a double number return as is
        if the number is not a double number must return mulitplied by two
        edge cases include NaN and negative numbers
 */
 
 /*
 Algorithm
-
-check if number is even length, coerce number to string
-check if number divided by length, both sides are equal
-store each side to a variable
-if both sides are equal return number
-if not, mulitply number by two
+save number to string variable
+if number is even length, split in half
+save each half to variables
+if both sides are equal print to console and coerce to number
+else print to console as doubled
 
 */
 

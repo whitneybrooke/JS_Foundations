@@ -98,10 +98,37 @@ function newFactors (number) {
 newFactors(10);
 newFactors(-10);
 
-/*
-Question 4
-.push mutates the original array and concat does not and returns a new array
-*/
+
+// Question 4
+
+function addToRollingBuffer1(buffer, maxBufferSize, newElement) {
+  buffer.push(newElement);
+  if (buffer.length > maxBufferSize) {
+    buffer.shift();
+  }
+  return buffer;
+}
+
+let array = [1, 2, 3, 4];
+addToRollingBuffer1(array, 4, 5); // [ 2, 3, 4, 5 ]
+console.log(array);
+// array = [ 2, 3, 4, 5 ]
+
+function addToRollingBuffer2(buffer, maxBufferSize, newElement) {
+  buffer = buffer.concat(newElement);
+  if (buffer.length > maxBufferSize) {
+    buffer.shift();
+  }
+  return buffer;
+}
+
+let array2 = [1, 2, 3, 4];
+addToRollingBuffer2(array2, 4, 5); // [ 2, 3, 4, 5 ]
+console.log(array2);
+// array = [1, 2, 3, 4];
+
+// .push mutates the original array and concat does not and returns a new array
+
 
 /*
 Question 5
@@ -110,6 +137,12 @@ console.log(0.3 + 0.6 === 0.9);
 
 0.8999999999999999
 false
+
+If you thought that the outputs would be 0.9 and true, respectively,
+you were wrong. JavaScript uses floating point numbers for all numeric
+operations. Most floating point representations used on computers lack
+a certain amount of precision, and that can yield unexpected results like these.
+
 */
 
 /*
@@ -127,7 +160,7 @@ To test whether the value is NaN, we use the Number.isNaN() method
 let nanArray = [NaN];
 console.log(nanArray[0] === NaN);
 
-console.log(Number.isNaN(nanArray[0]));
+console.log(Number.isNaN(nanArray[0])); // true ==> test if something is NaN
 
 // Question 7
 // What is the output of the following code?
@@ -141,6 +174,8 @@ let newAnswer = messWithIt(answer);
 console.log(answer - 8); // 34 --> answer is immutable
 // therefore it's 42 - 8 = 34
 
+
+// Question 8
 let munsters = {
   Herman: { age: 32, gender: "male" },
   Lily: { age: 30, gender: "female" },

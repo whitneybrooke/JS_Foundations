@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 /*
@@ -6,8 +7,9 @@ Given a string, return a new string that replaces every
 occurrence of the word "important" with "urgent":
 */
 
-let advice = "Few things in life are as important as house training your pet dinosaur.";
+let advice = "Few things in life are as important as house training your Important pet dinosaur.";
 advice.replace('important', 'urgent');
+advice.replaceAll('important', 'urgent'); // covers all occurences, case sensitive!!
 
 /*
 Question 2
@@ -23,8 +25,8 @@ let numbers = [1, 2, 3, 4, 5];
 let newArray = numbers.slice().reverse(); // slice returns a new array
 console.log(newArray);
 
-let sortedArray = [...numbers].sort(function(a,b) {
-  return b - a; // ascending would be a - b
+let sortedArray = [...numbers].sort(function(a,b) { // ... spread operator for
+  return b - a; // ascending would be a - b            new copy of the array
 });
 console.log(sortedArray);
 
@@ -35,7 +37,7 @@ numbers.forEach((number) => {
   console.log(reversedArray.unshift(number)); //unshift adds to start of array
 }); // takes each number starting with the first from numbers array
 // and adds it to the reversed array at the beginning. so starts with
-// 1, then adds 2 at the beginning, then 3 at the beg and so on
+// 1, then adds 2 at the beginning, then 3 at the beginning and so on
 
 /*
 Question 3
@@ -62,7 +64,7 @@ let famousWords = "seven years ago...";
 let fourScore = 'Four score and';
 console.log(fourScore + ' ' + famousWords);
 console.log(fourScore.concat(' ', famousWords));
-console.log('Four score and ' + famousWords);
+console.log(`${fourScore} ${famousWords}`);
 
 /*
 Question 5
@@ -91,10 +93,13 @@ values, but in an un-nested format:
 */
 
 let flinstones = ["Fred", "Wilma", ["Barney", "Betty"], ["Bambam", "Pebbles"]];
-flinstones.flat();
+flinstones.flat(); // depending on the array, takes multiple times
 // or
 let newFlinstones = [].concat(...flinstones); // starts with empty array
-// then ...spreads the names in one at a time
+// then ...spreads the names in one at a time, may take multiple times
+
+// array = [ 1, 2, [ 3, 4 ], [ 5, 6, [ 7, 8 ] ] ]
+// array[3][2][0] // 7 == accessing nested elements
 
 /*
 Question 7
@@ -121,6 +126,15 @@ let flintstonesArr = Object.entries(flintstones); // creates an array with each 
 ]
 */
 let barneyArr = flintstonesArr[2]; // access element at index 2
+
+Object.entries(flintstones).filter(pair => pair[0] === "Barney").shift();
+// .entries creates an array of the key pairs, filter finds Barney at pos
+// 0 ['Barney': 2] and .shift removes the pair and returns it, shift works
+// because 'Barney' is at the beginning of the accessed nested array ['Barney': 2]
+
+Array.filter((element) => {
+  return element[0] === 'Barney';
+});
 
 /*
 Question 8
@@ -166,10 +180,23 @@ characters in each of the following strings:
 let statement1 = "The Flintstones Rock!";
 let statement2 = "Easy come, easy go.";
 
-statement1.split('').filter(function(element) { // function declaration
-  return element === 't'.length; // split '' returns an array
-}); // filter then goes through each letter to find t, adds the t's
-// together get the length of 't'
+// split '' returns an array
+// filter then goes through each letter to find t, adds the t's
+// together get the length of 't' or the number of t's
 
-statement1.split('').filter(element => element === 't'.length); // function expression
-statement2.split('').filter(element => element === 't'.length);
+statement1.split('').filter(element => element === 't').length; // function expression
+statement2.split('').filter(element => element === 't').length;
+
+// my answer
+
+function findLetters (string) {
+  let array = string.split('');
+  let count = 0;
+  array.filter((element) => {
+    if (element === 't') {
+      count++;
+    }
+    return element;
+  });
+  return count;
+}

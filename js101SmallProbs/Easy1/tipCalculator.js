@@ -11,20 +11,23 @@ The tip is $30.00
 The total is $230.00
 */
 
-const readlineSync = require('readline-sync');
+let readlineSync = require('readline-sync');
 
-function prompt(message) {
+function showMess (message) {
   console.log(message);
 }
 
-prompt('What is the bill?');
-let bill = readlineSync.question();
+showMess('Please enter your bill amount.');
+let billAmount = readlineSync.prompt();
+billAmount = parseInt(billAmount, 10);
 
-prompt('What is the tip percentage?');
-let tipPercent = readlineSync.question();
+showMess('Please enter your tip amount.');
+let tipPercent = readlineSync.prompt();
+tipPercent = parseInt(tipPercent, 10);
 
-let totaltip = Number(bill * (tipPercent / 100));
-let totalBill = Number(totaltip) + Number(bill);
+let tipAmount = (billAmount / 100) * tipPercent;
+let totalBill = tipAmount + billAmount;
 
-console.log(`The tip is $${totaltip}`);
-console.log(`The total is $${totalBill}`);
+
+showMess(`The tip is $${tipAmount}.`);
+showMess(`The total bill is $${totalBill}`);

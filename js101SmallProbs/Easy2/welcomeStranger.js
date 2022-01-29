@@ -15,8 +15,8 @@ console.log(
 // logs Hello, John Q Doe! Nice to have a Master Plumber around.
 */
 
-function greetings (arr, obj) {
-  return `Hello, ${arr.join(' ')}! Nice to have a ${obj.title} ${obj.occupation} around.`;
+function greetings (array, object) {
+  console.log(`Hello, ${array.join(' ')}! Nice to have a ${object.title} ${object.occupation}}`);
 }
 
-console.log(greetings(["John", "Q", "Doe"], { title: "Master", occupation: "Plumber" }));
+greetings(["John", "Q", "Doe"], { title: "Master", occupation: "Plumber" });

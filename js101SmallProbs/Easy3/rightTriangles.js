@@ -50,18 +50,28 @@ Algorithm
 - print num of stars increment and pad number decrease
 */
 
-function triangle (integer) {
-  let stars = '*';
-  let padNumber = ' ';
-  let repeat = 0;
-  let spaces = integer - 1;
-  let numberTotal = 1;
-  while (numberTotal <= integer) {
-    numberTotal += 1;
-    repeat += 1;
-    spaces -= 1;
-    console.log(padNumber.repeat(spaces) + stars.repeat(repeat));
+function triangle (number) {
+  let stars = 1;
+  let padNumber = number - 1;
+  while (number > 0) {
+    console.log(`${' '.repeat(padNumber)}${'*'.repeat(stars)}`);
+    stars += 1;
+    padNumber -= 1;
+    number -= 1;
   }
 }
 
+triangle(5);
 triangle(9);
+
+// function triangle2 (number) {
+//   let stars = 1;
+//   let padNumber = number - 1;
+//   let count = number;
+//   for (let num = 0; num <= number; num++) {
+//     console.log(`${' '.repeat(padNumber)}${'*'.repeat(stars)}`);
+//     stars += 1;
+//     padNumber -= 1;
+//     count -= 1;
+//   }
+// }

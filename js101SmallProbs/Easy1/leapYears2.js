@@ -9,13 +9,19 @@ leap years both before and after 1752.
 
 */
 
-function isLeapYear (num) {
-  if ((num >= 1752 && (num % 4 === 0 && num % 100 !== 0)) || num % 400 === 0) {
-    return true;
-  } else if (num < 1752 && num % 4 === 0) {
-    return true;
+function gregLeapYear (year) {
+  return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
+}
+
+function julianLeapYear (year) {
+  return year % 4 === 0;
+}
+
+function isLeapYear (year) {
+  if (year <= 1752) {
+    return julianLeapYear(year);
   } else {
-    return false;
+    return gregLeapYear(year);
   }
 }
 

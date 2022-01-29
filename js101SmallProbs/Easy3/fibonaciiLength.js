@@ -28,7 +28,7 @@ algorithm
 fibonacci is first num + next num
 set first at 1n
 set second at 1n
-set count to 2n 
+set count to 2n
 set fibonacciTotal to 0
 
 fibonacciTotal = first + second

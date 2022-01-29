@@ -1,6 +1,5 @@
-/* eslint-disable id-length */
+/* eslint-disable */
 /*
-
 Convert a String to a Number!
 
 The parseInt() method converts a string of numeric characters
@@ -37,6 +36,7 @@ console.log(stringToInteger("570") === 570); // logs true
 // console.log(stringToInteger("570") === 570);
 
 // school answer
+
 function stringToInteger(string) {
   const DIGITS = {
     0: 0,
@@ -50,10 +50,8 @@ function stringToInteger(string) {
     8: 8,
     9: 9
   };
-  let arrayOfDigits = string.split("").map(char => DIGITS[char]);
-  let value = 0;
-  arrayOfDigits.forEach(element => (value = (10 * value) + element));
-  return value;
+  // add code here
 }
+
 console.log(stringToInteger("4321") === 4321);
 console.log(stringToInteger("570") === 570);

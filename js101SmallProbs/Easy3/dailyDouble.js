@@ -15,16 +15,21 @@ crunch('ggggggggggggggg');            // "g"
 crunch('a');                          // "a"
 crunch('');
 
+Algorithm:
+create string variable empty
+loop through string
+if letter !== next letter add to string variable
+
 */
 
 function crunch (string) {
-  let newString = ' ';
-  for (let i = 0; i < string.length; i++) {
-    if (string[i] !== string [i + 1]) {
-      newString += string[i];
+  let stringy = '';
+  for (let idx = 0; idx < string.length; idx++) {
+    if (string[idx] !== string[idx + 1]) {
+      stringy += string[idx];
     }
   }
-  return newString;
+  return stringy;
 }
 
 crunch('ddaaiillyy ddoouubbllee');    // "daily double"
@@ -32,9 +37,3 @@ crunch('4444abcabccba');              // "4abcabcba"
 crunch('ggggggggggggggg');            // "g"
 crunch('a');                          // "a"
 crunch('');
-
-// function that takes a string
-// turn string into array
-// iterate over array and remove values that are the same
-// save to new array
-// return arr with joining together

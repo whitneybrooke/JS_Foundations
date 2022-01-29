@@ -47,8 +47,11 @@ letters except for the first character, which should be capitalized.
 let munstersDescription = "the Munsters are CREEPY and Spooky.";
 // => The munsters are creepy and spooky.
 
-let newMunstersDesc = munstersDescription.charAt(0).toUpperCase() +
-munstersDescription.substring(1).toLowerCase();
+let newMunstersDesc = munstersDescription.slice(0, 1).toUpperCase() +
+munstersDescription.slice(1).toLowerCase();
+
+// let newMunstersDesc = munstersDescription.charAt(0).toUpperCase() +
+// munstersDescription.slice(1).toLowerCase();
 
 console.log(newMunstersDesc);
 
@@ -73,7 +76,7 @@ let additionalAges = { Marilyn: 22, Spot: 237 };
 let ages1 = { Herman: 32, Lily: 30, Grandpa: 5843, Eddie: 10 };
 let additionalAges = { Marilyn: 22, Spot: 237 };
 
-Object.assign(ages1, additionalAges);
+Object.assign(ages1, additionalAges); // target, source
 
 /* Question 7
 Determine whether the name Dino appears in the strings below --
@@ -92,8 +95,8 @@ How can we add the family pet, "Dino", to the following array?
 */
 
 let flintstones = ["Fred", "Barney", "Wilma", "Betty", "Bambam", "Pebbles"];
-flintstones.push('Dino');
-flintstones.unshift('Dino');
+flintstones.push('Dino'); // adds to end
+flintstones.unshift('Dino'); // adds to beginning
 
 /*
 Question 9

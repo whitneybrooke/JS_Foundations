@@ -20,45 +20,25 @@ Do not worry about validating the input.
 
 */
 
-let readlinesync = require('readline-sync');
+let readlineSync = require('readline-sync');
 
-function prompt(message) {
+function message (message) {
   console.log(`==> ${message}`);
 }
 
-function sum (num1, num2) {
-  return num1 + num2;
-}
+message('Enter the first number:');
+let firstNumber = readlineSync.question();
+firstNumber = parseInt(firstNumber, 10);
 
-function subtract (num1, num2) {
-  return num1 - num2;
-}
+message('Enter the second number:');
+let secondNumber = readlineSync.question();
+secondNumber = parseInt(secondNumber, 10);
 
-function multiply (num1, num2) {
-  return num1 * num2;
-}
-
-function divide (num1, num2) {
-  return num1 / num2;
-}
-
-function remainder (num1, num2) {
-  return num1 % num2;
-}
-
-function exponent (num1, num2) {
-  return num1 ** num2;
-}
-
-prompt('Enter the first number');
-let firstNum = Number(readlinesync.question());
-
-prompt('Enter the second number.');
-let secondNum = Number(readlinesync.question());
-
-console.log(`==> ${firstNum} + ${secondNum} = ${sum(firstNum, secondNum)}`);
-console.log(`==> ${firstNum} + ${secondNum} = ${subtract(firstNum, secondNum)}`);
-console.log(`==> ${firstNum} + ${secondNum} = ${multiply(firstNum, secondNum)}`);
-console.log(`==> ${firstNum} + ${secondNum} = ${divide(firstNum, secondNum).toFixed(0)}`);
-console.log(`==> ${firstNum} + ${secondNum} = ${remainder(firstNum, secondNum)}`);
-console.log(`==> ${firstNum} + ${secondNum} = ${exponent(firstNum, secondNum)}`);
+message(`${firstNumber} + ${secondNumber} = ${firstNumber + secondNumber}`);
+message(`${firstNumber} - ${secondNumber} = ${firstNumber - secondNumber}`);
+message(`${firstNumber} * ${secondNumber} = ${firstNumber * secondNumber}`);
+message(`${firstNumber} / ${secondNumber} = ${Math.floor(firstNumber / secondNumber)}`);
+message(`${firstNumber} % ${secondNumber} = ${firstNumber % secondNumber}`);
+message(
+  `${firstNumber} ** ${secondNumber} = ${Math.pow(firstNumber, secondNumber)}`
+);

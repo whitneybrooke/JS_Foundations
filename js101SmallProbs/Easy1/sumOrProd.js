@@ -1,4 +1,3 @@
-/* eslint-disable id-length */
 // Write a program that asks the user to enter an integer
 // greater than 0, then asks whether the user wants to
 // determine the sum or the product of all numbers between
@@ -18,41 +17,41 @@ Enter "s" to compute the sum, or "p" to compute the product. p
 The product of the integers between 1 and 6 is 720.
 */
 
-const readlineSync = require('readline-sync');
+let readlineSync = require('readline-sync');
 
-function prompt(message) {
+function prompt (message) {
   console.log(message);
 }
 
-prompt('Please enter an integer greater than 0.');
-let integer = readlineSync.question();
-
-prompt('Enter "s" to compute the sum, or "p" to compute the product.');
-let operation = readlineSync.question();
-
-
-function sum(num) {
-  if (num === 1) return 1;
-  return num + sum(num - 1);
-}
-
-function product(num) {
-  if (num === 1) return 1;
-  return num * product(num - 1);
-}
-
-if (operation === 's') {
-  console.log(`The sum of the integers between 1 and ${integer} is ${sum(Number(integer))}`);
-} else if (operation === 'p') {
-  console.log(`The product of the integers between 1 and ${integer} is ${product(Number(integer))}`);
-}
-
-/*
-function sumLoop (num) {
-  let sumTotals = 0;
-  for (let i = 0; i <= num; i++) {
-    sumTotals += i;
+function sum (number) {
+  let count = 0;
+  for (let num = 0; num <= number; num++) {
+    count += num;
   }
-  return sumTotals;
+  return count;
 }
-*/
+
+function multiply (number) {
+  let count = 1;
+  for (let num = 1; num <= number; num++) {
+    count *= num;
+  }
+  return count;
+}
+
+prompt(`Please enter an integer greater than 0:`);
+let number = readlineSync.question();
+number = parseInt(number, 10);
+
+prompt(`Enter "s" to compute the sum, or "p" to compute the product.`);
+let userInput = readlineSync.question();
+
+if (userInput.toLowerCase() === 's') {
+  let sumTotal = sum(number);
+  prompt(`The sum of the integers between 1 and ${number} is ${sumTotal}`);
+} else if (userInput.toLowerCase() === 'p') {
+  let productTotal = multiply(number);
+  prompt(`The product of the integers between 1 and ${number} is ${productTotal}`);
+} else {
+  prompt('Oops, unknown operation');
+}

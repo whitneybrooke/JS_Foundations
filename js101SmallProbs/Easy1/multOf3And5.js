@@ -6,15 +6,14 @@ should be 98 (3 + 5 + 6 + 9 + 10 + 12 + 15 + 18 + 20).
 You may assume that the number passed in is an integer greater than 1.
 */
 
-function multisum(num) {
-  let sum = 0;
-  // eslint-disable-next-line id-length
-  for (let i = 0; i <= num; i++) {
-    if (i % 3 === 0 || i % 5 === 0) {
-      sum += i;
+function multisum (num) {
+  let count = 0;
+  for (let number = 0; number <= num; number++) {
+    if (number % 3 === 0 || number % 5 === 0) {
+      count += number;
     }
   }
-  return sum;
+  return count;
 }
 
 multisum(3);       // 3
